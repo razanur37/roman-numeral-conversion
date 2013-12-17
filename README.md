@@ -1,4 +1,4 @@
-roman-numeral-conversion
+Roman Numeral Conversions
 ========================
 
-C Function to convert numbers to roman numerals
+C function to convert integers to roman numerals and vice-versa.
