@@ -8,7 +8,7 @@
 int main(int argc, char *argv[])
 {
   /* Make sure an operand was entered */
-  if (!argv[1])
+  if (argc < 2)
     {
       printf("Error: Enter an operand\n");
       exit(EXIT_FAILURE);
@@ -17,7 +17,7 @@ int main(int argc, char *argv[])
   char *input = argv[1];
 
   /* Make sure only one operand was entered */
-  if (argv[2])
+  if (argc > 2)
     {
       printf("Error: Use only one operand\n");
       exit(EXIT_FAILURE);

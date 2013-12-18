@@ -21,7 +21,7 @@ int isValueInArray(char val, char *arr, int size)
 int main(int argc, char *argv[])
 {
   /* Make sure there's an input */
-  if (!argv[1])
+  if (argc < 2)
     {
       printf("Error: Enter an operand\n");
       exit(EXIT_FAILURE);
@@ -33,7 +33,7 @@ int main(int argc, char *argv[])
     input[i] = toupper(input[i]);
 
   /* Make sure there's only 1 input */
-  if (argv[2])
+  if (argc > 2)
     {
       printf("Error: Enter only 1 operand\n");
       exit(EXIT_FAILURE);
