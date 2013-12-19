@@ -1,3 +1,6 @@
+/* Copyright (C) 2013 by Casey English */
+/* roman.c - main program for roman <-> integer conversion */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -74,6 +77,8 @@ int main(int argc, char *argv[])
       strcat(command, arguments.args[0]);
       system(command);
     }
+
+  free(command);
 
   return 0;
 

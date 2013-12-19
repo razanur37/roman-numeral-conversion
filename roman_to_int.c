@@ -1,4 +1,5 @@
 /* Copyright (C) 2013 by Casey English */
+/* roman_to_int.c - convert a roman numeral to an integer */
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -7,7 +8,9 @@
 
 #define fail -1
 
-int isValueInArray(char val, char *arr, int size)
+/* Checks if a value is in an array and returns the index to the value, or
+   an impossible index if the value is not in the array. */
+int placeInArray(char val, char *arr, int size)
 {
   int i;
   for (i=0; i<size; i++)
@@ -50,21 +53,26 @@ int main(int argc, char *argv[])
   int c;
   for (c=0; c<strlen(input); c++)
     {
-      if (isValueInArray(input[c], nums, 7) == fail)
+      if (placeInArray(input[c], nums, 7) == fail)
 	{
 	  printf("Error: Enter a valid roman numeral\n");
 	  exit(EXIT_FAILURE);
 	}
     }
-
+  
+  /* For each character in the numeral, find out what value that
+     character represents and store that value in an array */
   for (c=0; c<strlen(input); c++)
     {
       int temp;
-      value = ints[isValueInArray(input[c], nums, 7)];
+      value = ints[placeInArray(input[c], nums, 7)];
 
+      /* If there's more to the string, we have to figure out if the
+	 current character is 'negative' or not by looking at the next
+	 character */
       if (input[c+1])
 	{
-	  next_value = ints[isValueInArray(input[c+1], nums, 7)];
+	  next_value = ints[placeInArray(input[c+1], nums, 7)];
 	  if (next_value > value)
 	    value *= -1;
 	}
@@ -87,6 +95,8 @@ int main(int argc, char *argv[])
       places_size++;	  
     }
 
+  /* Now sum up all the values in the places array to get the final
+     value */
   int sum = 0;
   for (i=0; i<places_size; i++)
     sum += places[i];

@@ -1,4 +1,5 @@
 /* Copyright (C) 2013 by Casey English */
+/* int_to_roman.c - convert an integer to a roman numeral */
 
 #include <stdio.h>
 #include <stdlib.h>
