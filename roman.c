@@ -60,9 +60,9 @@ int main(int argc, char *argv[])
   argp_parse (&argp, argc, argv, 0, 0, &arguments);
 
   if (arguments.numeral)
-    printf("Roman Numeral: %s\n", arguments.args[0]);
+    system(./roman_to_int.o arguments.args[0]);
   else
-    printf("Integer: %s\n", arguments.args[0]);
+    printf(./int_to_roman.o arguments.args[0]);
 
   return 0;
 
