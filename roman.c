@@ -60,9 +60,9 @@ int main(int argc, char *argv[])
   argp_parse (&argp, argc, argv, 0, 0, &arguments);
 
   if (arguments.numeral)
-    printf("Roman Numeral: %s", arguments.args[0]);
+    printf("Roman Numeral: %s\n", arguments.args[0]);
   else
-    printf("Integer: %s", arguments.args[0]);
+    printf("Integer: %s\n", arguments.args[0]);
 
   return 0;
 
