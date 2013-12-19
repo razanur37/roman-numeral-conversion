@@ -59,10 +59,21 @@ int main(int argc, char *argv[])
   arguments.numeral = 0;
   argp_parse (&argp, argc, argv, 0, 0, &arguments);
 
+  char *command = NULL;
   if (arguments.numeral)
-    system(./roman_to_int.o arguments.args[0]);
+    {
+      command = malloc(strlen("./roman_to_int.o ")+1);
+      strcpy(command, "./roman_to_int.o ");
+      strcat(command, arguments.args[0]);
+      system(command);
+    }
   else
-    printf(./int_to_roman.o arguments.args[0]);
+    {
+      command = malloc(strlen("./int_to_roman.o ")+1);
+      strcpy(command, "./int_to_roman.o ");
+      strcat(command, arguments.args[0]);
+      system(command);
+    }
 
   return 0;
 
