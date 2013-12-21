@@ -6,24 +6,8 @@
 #include <string.h>
 #include <ctype.h>
 
-int main(int argc, char *argv[])
+char* int_to_roman(char *input)
 {
-  /* Make sure an operand was entered */
-  if (argc < 2)
-    {
-      printf("Error: Enter an operand\n");
-      exit(EXIT_FAILURE);
-    }
-
-  char *input = argv[1];
-
-  /* Make sure only one operand was entered */
-  if (argc > 2)
-    {
-      printf("Error: Use only one operand\n");
-      exit(EXIT_FAILURE);
-    }
-  
   /* Make sure the input is an integer */
   int i;
   for (i=0; i < strlen(input); i++)
@@ -67,9 +51,5 @@ int main(int argc, char *argv[])
       input_number -= ints[i] * count;
     }
 
-  printf("%s\n", result);
-
-  free(result);
-
-  return 0;
+  return result;
 }

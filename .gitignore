@@ -1,9 +1,15 @@
 # Copyright (C) 2013 by Casey English
 # .gitignore file for roman-numeral-conversion
 
+# Ignore executables, by ignoring everything and unignoring anything with an
+# extension
+*
+!*.*
+
+# Ignore object files
+*.o*
+
 # Ignore temporary files
 *~
 \#*
 
-# Ignore object files
-*.o*

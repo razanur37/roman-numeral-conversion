@@ -21,29 +21,14 @@ int placeInArray(char val, char *arr, int size)
   return fail;
 }
 
-int main(int argc, char *argv[])
+int roman_to_int(char *input)
 {
-  /* Make sure there's an input */
-  if (argc < 2)
-    {
-      printf("Error: Enter an operand\n");
-      exit(EXIT_FAILURE);
-    }
-
-  char *input = argv[1];
   int i;
   for (i=0; i<strlen(input); i++)
     input[i] = toupper(input[i]);
 
-  /* Make sure there's only 1 input */
-  if (argc > 2)
-    {
-      printf("Error: Enter only 1 operand\n");
-      exit(EXIT_FAILURE);
-    }
-
   char nums[] = {'M',  'D', 'C', 'L', 'X', 'V', 'I'};
-  int ints[] =   {1000,  500, 100, 50,  10,  5,   1};
+  int ints[] =  {1000,  500, 100, 50,  10,  5,   1};
   int *places = NULL;
   int places_size = 0;
   int value;
@@ -101,10 +86,8 @@ int main(int argc, char *argv[])
   for (i=0; i<places_size; i++)
     sum += places[i];
 
-  printf("%i\n", sum);
-
   free(places);
 
-  return 0;
+  return sum;
 
 }
