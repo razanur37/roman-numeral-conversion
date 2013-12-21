@@ -63,7 +63,7 @@ char* int_to_roman(char *input)
     {
       if (!isdigit(input[i]))
 	{
-	  printf("Error: Enter a whole number\n");
+	  printf("roman: enter a whole number\n");
 	  exit(EXIT_FAILURE);
 	}
     }
@@ -74,7 +74,7 @@ char* int_to_roman(char *input)
   /* Make sure the input isn't out-of-bounds */
   if (input_number <= 0 || input_number >= 4000)
     {
-      printf("Error: Enter a number between 1 and 3999\n");
+      printf("roman: enter a number between 1 and 3999\n");
       exit(EXIT_FAILURE);
     }
   
@@ -137,7 +137,7 @@ int roman_to_int(char *input)
     {
       if (placeInArray(input[c], nums, 7) == fail)
 	{
-	  printf("Error: Enter a valid roman numeral\n");
+	  printf("roman: enter a valid roman numeral\n");
 	  exit(EXIT_FAILURE);
 	}
     }
